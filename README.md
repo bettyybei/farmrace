@@ -1,1 +1,1 @@
-# stackathon
+# Stackathon Project

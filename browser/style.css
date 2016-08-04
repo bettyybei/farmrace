@@ -1,0 +1,30 @@
+body {
+  cursor: pointer;
+}
+
+#game {
+  background-color: lightgreen;/*
+  width: 80%; height: 80%;*/
+  margin: 100px auto 10px auto;
+  display: block;
+}
+
+.circle-button {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  /*padding: 6px 0;*/
+  border-radius: 50%;
+  background-color: red;
+  border: 0;
+
+
+  font-size: 36px;
+  color: white;
+}
+
+#go {
+  margin: 0 auto;
+  display: block;
+  width: 100px;
+}
