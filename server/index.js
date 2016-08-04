@@ -6,6 +6,10 @@ var app = express();
 module.exports = function () {
   app.use(express.static(path.join(__dirname, '../browser')));
 
+  app.get('/mobile', function (req, res) {
+    res.sendFile(path.join(__dirname, '../mobile.html'));
+  });
+
   app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../index.html'));
   });

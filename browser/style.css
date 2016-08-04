@@ -1,30 +1,31 @@
 body {
   cursor: pointer;
+  text-align: center;
 }
 
 #game {
-  background-color: lightgreen;/*
-  width: 80%; height: 80%;*/
-  margin: 100px auto 10px auto;
+  /*background: url(https://upload.wikimedia.org/wikipedia/commons/3/35/Old_road,_new_road_-_geograph.org.uk_-_1112081.jpg);*/
+  background-color: lightgreen;
+  margin: 30px auto 10px auto;
   display: block;
 }
 
-.circle-button {
-  width: 100px;
-  height: 100px;
+.go-button {
+  width: 100px; height: 100px;
   text-align: center;
   /*padding: 6px 0;*/
   border-radius: 50%;
   background-color: red;
   border: 0;
 
+  margin: 0 auto;
+  display: block;
 
   font-size: 36px;
   color: white;
 }
 
-#go {
-  margin: 0 auto;
-  display: block;
-  width: 100px;
+.mobile {
+  font-size: 48px;
+  width: 200px; height: 200px;
 }

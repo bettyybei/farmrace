@@ -9,36 +9,26 @@ window.game = new window.EventEmitter();
   var chickenImg = new Image()
   chickenImg.src = '/img/chicken.png'
 
-  var chicken = {
-    x: 100,
-    y: 100,
-    img: chickenImg,
-    move: function () {
-      chicken.x += 5;
-    },
-    draw: function () {
-      ctx.drawImage(chicken.img, chicken.x, chicken.y);
-    }
-  }
-
-  function drawEverything() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    chicken.draw();
-  }
+  var chickenX = 100;
 
   document.getElementById('go').addEventListener('click', function() {
     game.moveChicken(true);
   });
 
-/*  chickenImg.onload = function () {
-    ctx.drawImage(chicken.img, chicken.x, chicken.y);
-  }*/
+
+  game.setChicken = function (x) {
+    chickenX = x;
+    ctx.drawImage(chickenImg, chickenX, 100);
+  }
 
   game.moveChicken = function (shouldBroadcast) {
-    chicken.move();
-    drawEverything();
+    chickenX += 5;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(chickenImg, chickenX, 100);
+
     if (shouldBroadcast) {
-      socket.emit('moveChickenEvent');
+      socket.emit('moveChickenEvent', chickenX);
     }
   }
 
