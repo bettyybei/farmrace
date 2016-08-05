@@ -11,6 +11,13 @@ body {
   display: block;
 }
 
+#link {
+  margin-top: 100px;
+  display: block;
+
+  font-size: 12px;
+}
+
 .go-button {
   width: 100px; height: 100px;
   text-align: center;
