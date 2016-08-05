@@ -13,19 +13,53 @@ body {
 .go-button {
   width: 100px; height: 100px;
   text-align: center;
-  /*padding: 6px 0;*/
   border-radius: 50%;
-  background-color: red;
   border: 0;
 
   margin: 0 auto;
   display: block;
 
   font-size: 36px;
+  display: inline;
+}
+
+.chicken {
+  background-color: gold;
+  color: black;
+  font-size: 18px;
+}
+
+.cow {
+  background: url(http://image.shutterstock.com/display_pic_with_logo/271873/271873,1226284779,2/stock-vector-cow-print-vector-20275480.jpg);
   color: white;
+    text-shadow:
+   -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+     2px 2px 0 #000;
+}
+
+.pig {
+  background-color: lightpink;
+  color: black;
+}
+
+.horse {
+  background-color: brown;
+  color: white;
+  font-size: 24px;
 }
 
 .mobile {
   font-size: 48px;
   width: 200px; height: 200px;
+  display: block;
+}
+
+.chicken.mobile {
+  font-size: 32px;
+}
+
+.horse.mobile {
+  font-size: 40px
 }

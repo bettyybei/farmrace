@@ -12,20 +12,25 @@ server.on('request', app);
 
 var io = socketio(server);
 
-var savedChickenX = 0;
+var animalsX = {
+  chicken: 0,
+  cow: 0,
+  pig: 0,
+  horse: 0
+}
 
 io.on('connection', function (socket) {
   console.log('A new client has connected with an id of ' + socket.id);
-  socket.emit('setSavedLocation', savedChickenX);
+  socket.emit('setSavedLocations', animalsX);
 
   socket.on('disconnect', function(){
     console.log('Client has disconnected');
   });
 
-  socket.on('moveChickenEvent', function (x) {
-    savedChickenX = x;
-    socket.broadcast.emit('allMoveChickenEvent');
-  })
+  socket.on('moveAnimalsEvent', function (type, x) {
+    animalsX[type] = x;
+    socket.broadcast.emit('allMoveAnimalsEvent', type);
+  });
 
 })
 
