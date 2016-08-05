@@ -23,25 +23,29 @@ window.game = new window.EventEmitter();
       x: 0,
       y: 25,
       img: chickenImg,
-      button: document.getElementById('go-chicken')
+      button: document.getElementById('go-chicken'),
+      sound: document.getElementById('chicken-sound')
     },
     cow: {
       x: 0,
       y: 125,
       img: cowImg,
-      button: document.getElementById('go-cow')
+      button: document.getElementById('go-cow'),
+      sound: document.getElementById('cow-sound')
     },
     pig: {
       x: 0,
       y: 225,
       img: pigImg,
-      button: document.getElementById('go-pig')
+      button: document.getElementById('go-pig'),
+      sound: document.getElementById('pig-sound')
     },
     horse: {
       x: 0,
       y: 325,
       img: horseImg,
-      button: document.getElementById('go-horse')
+      button: document.getElementById('go-horse'),
+      sound: document.getElementById('horse-sound')
     }
   }
 
@@ -71,6 +75,7 @@ window.game = new window.EventEmitter();
   }
 
   game.moveAnimal = function (type, shouldBroadcast) {
+    if (animals[type].sound) animals[type].sound.play();
     animals[type].x += 5;
 
     if (animals[type].x > 100) game.gameOver(type);
