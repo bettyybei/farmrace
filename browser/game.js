@@ -22,38 +22,42 @@ window.game = new window.EventEmitter();
     chicken: {
       x: 0,
       y: 25,
-      img: chickenImg
+      img: chickenImg,
+      button: document.getElementById('go-chicken')
     },
     cow: {
       x: 0,
       y: 125,
-      img: cowImg
+      img: cowImg,
+      button: document.getElementById('go-cow')
     },
     pig: {
       x: 0,
       y: 225,
-      img: pigImg
+      img: pigImg,
+      button: document.getElementById('go-pig')
     },
     horse: {
       x: 0,
       y: 325,
-      img: horseImg
+      img: horseImg,
+      button: document.getElementById('go-horse')
     }
   }
 
-  document.getElementById('go-chicken').addEventListener('click', function() {
+  animals.chicken.button.addEventListener('click', function () {
     game.moveAnimal('chicken', true);
   });
 
-  document.getElementById('go-cow').addEventListener('click', function() {
+  animals.cow.button.addEventListener('click', function () {
     game.moveAnimal('cow', true);
   });
 
-  document.getElementById('go-pig').addEventListener('click', function() {
+  animals.pig.button.addEventListener('click', function () {
     game.moveAnimal('pig', true);
   });
 
-  document.getElementById('go-horse').addEventListener('click', function() {
+  animals.horse.button.addEventListener('click', function () {
     game.moveAnimal('horse', true);
   });
 
@@ -68,6 +72,8 @@ window.game = new window.EventEmitter();
 
   game.moveAnimal = function (type, shouldBroadcast) {
     animals[type].x += 5;
+
+    if (animals[type].x > 100) game.gameOver(type);
 
     drawEverything();
 
@@ -85,4 +91,41 @@ window.game = new window.EventEmitter();
     }
   }
 
+
+  var gameOverPopUp = document.getElementById('game-over');
+  var winner = document.getElementById('winner')
+  var restartButton = document.getElementById('restart-button');
+
+
+  game.gameOver = function (winningAnimal) {
+    for (var type in animals) {
+      if (animals.hasOwnProperty(type)) {
+        animals[type].button.disabled = true;
+      }
+    }
+    if (gameOverPopUp) {
+      gameOverPopUp.style.display = 'block';
+      winner.innerHTML = winningAnimal;
+    }
+  }
+
+  game.restartGame = function () {
+    if (gameOverPopUp) gameOverPopUp.style.display = 'none';
+
+    for (var type in animals) {
+      if (animals.hasOwnProperty(type)) {
+        animals[type].x = 0;
+        animals[type].button.disabled = false;
+      }
+    }
+
+    drawEverything();
+  }
+
+  if (restartButton) {
+    restartButton.addEventListener('click', function () {
+      socket.emit('restartGameEvent');
+      game.restartGame();
+    });
+  }
 })();

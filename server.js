@@ -1,11 +1,8 @@
-/*var path = require('path');*/
 var http = require('http');
-var socketio = require('socket.io');/*
-var Promise = require('bluebird');*/
+var socketio = require('socket.io')
 
 var server = http.createServer();
-/*
-var express = require('express');*/
+
 var app = require('./server/index.js')();
 
 server.on('request', app);
@@ -31,6 +28,15 @@ io.on('connection', function (socket) {
     animalsX[type] = x;
     socket.broadcast.emit('allMoveAnimalsEvent', type);
   });
+
+  socket.on('restartGameEvent', function () {
+    for (var type in animalsX) {
+      if (animalsX.hasOwnProperty(type)) {
+        animalsX[type] = 0;
+      }
+    }
+    socket.broadcast.emit('restartGame');
+  })
 
 })
 

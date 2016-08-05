@@ -1,6 +1,7 @@
 body {
   cursor: pointer;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #game {
@@ -32,11 +33,11 @@ body {
 .cow {
   background: url(http://image.shutterstock.com/display_pic_with_logo/271873/271873,1226284779,2/stock-vector-cow-print-vector-20275480.jpg);
   color: white;
-    text-shadow:
-   -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-     2px 2px 0 #000;
+  text-shadow:
+ -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+   2px 2px 0 #000;
 }
 
 .pig {
@@ -52,8 +53,9 @@ body {
 
 .mobile {
   font-size: 48px;
-  width: 200px; height: 200px;
+  width: 250px; height: 250px;
   display: block;
+  margin-top: 50px;
 }
 
 .chicken.mobile {
@@ -63,3 +65,54 @@ body {
 .horse.mobile {
   font-size: 40px
 }
+
+.btn {
+  padding: 10px 15px;
+  background: #5cb85c;
+  color: #FFF;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background: #449d44;
+}
+
+/* Game Over Pop Up Styling*/
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 40%;
+
+  font-size: 24px;
+}
+
+#winner {
+  font-size: 72px;
+  color: red;
+}
+
+#restart-button {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+
+
+

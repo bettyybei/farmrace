@@ -5,7 +5,14 @@
         <link href="style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <!-- <h1>Help the chicken cross the road!</h1> -->
+        <h1>Race to escape!</h1>
+        <div class="popup" id="game-over">
+            <div class="popup-content">
+                Game Over! Congratulations:
+                <br><br><span id="winner"></span>
+                <br><button class="btn" id="restart-button">Restart Game?</button>
+            </div>
+        </div>
         <canvas id="game" width="700" height="400"></canvas>
         <button class="go-button chicken" id="go-chicken">CHICKEN</button>
         <button class="go-button cow" id="go-cow">COW</button>
