@@ -5,7 +5,7 @@ body {
 }
 
 #game {
-  /*background: url(https://upload.wikimedia.org/wikipedia/commons/3/35/Old_road,_new_road_-_geograph.org.uk_-_1112081.jpg);*/
+  background: url("img/background.jpg");
   background-color: lightgreen;
   margin: 30px auto 10px auto;
   display: block;

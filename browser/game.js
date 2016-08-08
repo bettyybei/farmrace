@@ -78,7 +78,7 @@ window.game = new window.EventEmitter();
     if (animals[type].sound) animals[type].sound.play();
     animals[type].x += 5;
 
-    if (animals[type].x > 690) game.gameOver(type);
+    if (animals[type].x > 650) game.gameOver(type);
 
     drawEverything();
 
