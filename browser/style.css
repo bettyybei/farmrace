@@ -3,14 +3,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
 #title {
   font-size: 72px;
   font-family: 'Pacifico', cursive;
+  margin: 0px;
 }
 
 #description {
-  font-size: 24px;
-font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
 }
 
 #game {
@@ -20,10 +24,12 @@ font-family: 'Quicksand', sans-serif;
   display: block;
 }
 
-#link {
-  margin-top: 100px;
-  display: block;
+#help {
+  margin: 20px 200px;
+}
 
+#link {
+  display: block;
   font-size: 12px;
 }
 
@@ -71,18 +77,18 @@ font-family: 'Quicksand', sans-serif;
 }
 
 .mobile {
-  font-size: 84px;
+  font-size: 48px;
   width: 250px; height: 250px;
   display: block;
   margin-top: 50px;
 }
 
 .chicken.mobile {
-  font-size: 64px;
+  font-size: 32px;
 }
 
 .horse.mobile {
-  font-size: 72px
+  font-size: 40px
 }
 
 .btn {
